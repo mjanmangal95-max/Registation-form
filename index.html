@@ -1,0 +1,94 @@
+<body>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Form</title>
+</head>
+<body>
+    <div class="main">
+       <div class="head">Signup</div>
+       <hr>
+       <div class="ready">Already have an account? <a class="login" href="">Login</a>
+    
+    </div>
+       <div class="ready"> <a class="login" href="">Login</a></div>
+
+       <hr>
+
+       <form action="">
+        <div  class="names">
+            <label class="pan" for="username">Username:</label>
+            <input type="text" name="username" id="username">
+        </div>
+        <div  class="names">
+            <label  for="password">Password:</label>
+            <input type="password" name="password" id="password">
+        </div>
+        <div  class="names">
+            <label for="Cpassword">Confirm Password:</label>
+            <input type="password" name="cpassword" id="cpassword">
+        </div>
+        <div  class="names">
+            <label for="email">Email Address:</label>
+            <input type="email" name="email" id="email">
+        </div>
+        <div  class="names">
+            <label for="fname">First Name:</label>
+            <input type="text" name="fname" id="fname">
+        </div>
+        <div  class="names">
+            <label for="lname">Last Name:</label>
+            <input type="text" name="lname" id="lname">
+        </div>
+       </form>
+
+       <div class="ready">
+        <input type="checkbox">I have read the Grooveshark Terms of Service.(opens in a new window)
+       </div>
+       <hr>
+       <div class="last">
+        <footer class="foot"><input type="submit" value="submit">submit</footer>
+       </div>
+       
+    </div>
+    <script>
+    
+        function checkform(){
+
+    const firstname = document.getElementById("username").value.trim();
+    const lastname = document.getElementById("password").value();
+    const username = document.getElementById("cpassword").value();
+    const email = document.getElementById("email").value.trim();
+    const password = document.getElementById("fname").value.trim();
+    const confirmpassword = document.getElementById("lname").value.trim();
+
+    if(!username || !password || !confirmpassword || !email || !firstname || !lastname){
+        alert("All fields are required");
+        return false;
+    }
+
+    const emailpattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if(!emailpattern.test(email)){
+        alert("Please enter a valid email address");
+        return false;
+    }
+
+    if(password.length < 8){
+        alert("Password must be at least 8 characters long");
+        return false;
+    }
+
+    if(password !== confirmpassword){
+        alert("Passwords do not match");
+        return false;
+    }
+
+    alert("Form submitted successfully");
+    return true;
+}
+</script>
+</body>
+</html>
